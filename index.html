@@ -1,0 +1,123 @@
+<html>
+    <head>
+    <title>Tela de login</title>
+    </head>
+
+    <style>
+        *{margin:0; padding: 0; box-sizing: border-box;}
+        body{
+            background-color: #457b9d;
+        }
+
+        form{
+            background-color: white;
+            max-width: 700px;
+            width: 70%;
+            padding: 20px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        form h3{
+            text-align: center;
+            color: #457b9d;
+            font-family: 'Calibri light';
+            font-size: 88px;
+            padding-bottom: 20px;
+        }
+
+        form input[type=text],
+        form input[type=password]{
+            width: 70%;
+            height: 70px;
+            border: 3px solid #363636;
+            border-radius: 50px;
+            padding-left: 80px;
+            margin-left: 50%;
+            margin-bottom: 10px;
+            transform: translate(-50%, 0%);
+            font-size: 15px;
+        }
+
+        form input.btn_submit{
+            width: 70%;
+            height: 70px;
+            cursor: pointer;
+            background: #a8dadc;
+            color: white;
+            border: 3px solid #a8dadc;
+            border-radius: 50px;
+            transition: 0.5s;
+            margin-left: 50%;
+            margin-bottom: 10px;
+            transform: translate(-50%, 0%);
+            font-family: 'Calibri light';
+            font-size: 30px;
+        }
+
+        form input.btn_esqueceuSenha{
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #a8dadc;
+            transition: 0.5s;
+            margin-left: 50%;
+            margin-bottom: 10px;
+            transform: translate(-50%, 0%);
+            font-family: 'Calibri light';
+            font-size: 20px;
+            text-shadow: 0px 0px 1px black;;
+        }
+
+        form input.btn_submit:hover{
+            background-color: #457b9d;
+            border-color: #457b9d;
+        }
+
+        form input[type=text]:focus{
+            outline: 0;
+            color: white;
+            transition: 0.5s;
+        }
+
+        form input[type=password]:focus{
+            outline: 0;
+            color: white;
+            transition: 0.5s;
+        }
+    </style>
+
+    <body>
+        <form>
+            <h3>Login</h3>
+            <input id="email" type="text" name="e-mail" placeholder="Seu email..." />
+            <input id="password" type="password" name="senha" placeholder="Sua senha..."/>
+            <input class="btn_submit" type="submit" name="acao" value="Login" />
+            <input class="btn_esqueceuSenha" type="submit" name="acaoSenha" value="Esqueceu sua senha?" />
+        </form>
+
+        <script>
+            var email = document.getElementById('email');
+            var password = document.getElementById('password');
+
+            function formFocus(nomeForm){
+                nomeForm.addEventListener('focus', () => {
+                    nomeForm.style.backgroundColor = "#363636"
+                })
+            }
+
+            function formBlur(nomeForm){
+                nomeForm.addEventListener('blur', () => {
+                    nomeForm.style.backgroundColor = "white"
+                })
+            }
+
+            formFocus(email)
+            formFocus(password)
+            formBlur(email)
+            formBlur(password)
+        </script>
+    </body>
+</html>
